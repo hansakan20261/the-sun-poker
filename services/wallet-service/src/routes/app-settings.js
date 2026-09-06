@@ -3,7 +3,7 @@ const { pool } = require('../db');
 const { authMiddleware, adminOnly } = require('../middleware/auth');
 const { requireMenu } = require('../middleware/menu-permission');
 const { getConfig, normalizeGameRuntime, setConfig } = require('../config-service');
-const { configHash } = require('../../../config/config-platform');
+const { configHash } = require('../../../../config/config-platform');
 
 function compareSemver(a, b) {
   const pa = a.split('.').map(Number);
