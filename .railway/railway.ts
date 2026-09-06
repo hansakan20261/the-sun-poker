@@ -20,6 +20,7 @@ export default defineRailway(() => {
       JWT_SECRET: preserve(),
       JWT_EXPIRES_IN: "7d",
       JWT_REFRESH_EXPIRES_IN: "30d",
+      CORS_ORIGINS: "*",
     },
     healthcheck: "/health",
   });
@@ -31,6 +32,7 @@ export default defineRailway(() => {
       DATABASE_URL: db.env.DATABASE_URL,
       REDIS_URL: cache.env.REDIS_URL,
       JWT_SECRET: preserve(),
+      CORS_ORIGINS: "*",
     },
     healthcheck: "/health",
   });
@@ -42,6 +44,7 @@ export default defineRailway(() => {
       DATABASE_URL: db.env.DATABASE_URL,
       REDIS_URL: cache.env.REDIS_URL,
       JWT_SECRET: preserve(),
+      CORS_ORIGINS: "*",
     },
     healthcheck: "/health",
   });
