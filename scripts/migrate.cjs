@@ -36,7 +36,7 @@ async function runMigrations() {
     const applied = await client.query('SELECT COUNT(*)::int AS count FROM schema_migrations');
     const isFresh = applied.rows[0].count === 0;
 
-    if (isFresh && fs.existsSync(INIT_DIR)) {
+    if (isFresh && fs.existsSync(INIT_DIR) && !process.env.SKIP_INIT) {
       const initFiles = fs.readdirSync(INIT_DIR)
         .filter(f => f.endsWith('.sql'))
         .sort();
