@@ -22,8 +22,4 @@ const env = { ...process.env, DATABASE_URL: publicUrl };
 
 console.log('Running migrations...');
 let r = spawnSync('node', ['scripts/migrate.cjs'], { env, stdio: 'inherit' });
-if (r.status !== 0) process.exit(r.status);
-
-console.log('Running backfill...');
-r = spawnSync('node', ['scripts/backfill-room-snapshots.cjs'], { env, stdio: 'inherit' });
 process.exit(r.status);
