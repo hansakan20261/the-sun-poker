@@ -36,6 +36,10 @@ async function runMigrations() {
     const applied = await client.query('SELECT COUNT(*)::int AS count FROM schema_migrations');
     const isFresh = applied.rows[0].count === 0;
 
+    const files = fs.readdirSync(MIGRATIONS_DIR)
+      .filter(f => f.endsWith('.sql'))
+      .sort();
+
     if (isFresh && fs.existsSync(INIT_DIR) && !process.env.SKIP_INIT) {
       const initFiles = fs.readdirSync(INIT_DIR)
         .filter(f => f.endsWith('.sql'))
@@ -43,9 +47,17 @@ async function runMigrations() {
       await applySqlFiles(client, INIT_DIR, initFiles);
     }
 
-    const files = fs.readdirSync(MIGRATIONS_DIR)
-      .filter(f => f.endsWith('.sql'))
-      .sort();
+    if (isFresh && process.env.SKIP_INIT) {
+      for (const file of files) {
+        if (fs.existsSync(path.join(INIT_DIR, file))) {
+          await client.query(
+            'INSERT INTO schema_migrations (filename) VALUES ($1) ON CONFLICT DO NOTHING',
+            [file]
+          );
+        }
+      }
+    }
+
     await applySqlFiles(client, MIGRATIONS_DIR, files);
 
     await client.query('COMMIT');
