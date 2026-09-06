@@ -11,6 +11,14 @@ const roomFields = [
 async function main() {
   const client = await pool.connect();
   try {
+    // Clear stale scalar snapshots and fix invalid small_blind before resolving
+    await client.query('UPDATE game_tables SET config_snapshot = NULL');
+    await client.query(
+      `UPDATE game_tables
+       SET small_blind = LEAST(1000, GREATEST(5, FLOOR(big_blind / 2)))
+       WHERE small_blind IS NULL OR small_blind < 5 OR small_blind > 1000`,
+    );
+
     const tables = await client.query(
       'SELECT id, game_type_id, room_template_id FROM game_tables ORDER BY created_at ASC',
     );

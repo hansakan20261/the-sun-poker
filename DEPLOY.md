@@ -20,9 +20,9 @@ docker compose up -d
 4. The `database/init` files run automatically on first PostgreSQL start.
 5. Seed snapshots for existing rooms (if you loaded a backup):
 ```bash
-docker compose exec wallet-service node /app/scripts/backfill-room-snapshots.js
+docker compose exec wallet-service node /app/scripts/backfill-room-snapshots.cjs
 # or from local with DATABASE_URL set:
-node scripts/backfill-room-snapshots.js
+node scripts/backfill-room-snapshots.cjs
 ```
 
 ## Existing database (incremental migration)
@@ -30,8 +30,8 @@ node scripts/backfill-room-snapshots.js
 1. Export the latest dump and restore it on the server.
 2. Run migrations and backfill:
 ```bash
-node scripts/migrate.js
-node scripts/backfill-room-snapshots.js
+node scripts/migrate.cjs
+node scripts/backfill-room-snapshots.cjs
 ```
 3. Start app services:
 ```bash

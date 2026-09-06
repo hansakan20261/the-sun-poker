@@ -6,6 +6,21 @@ const { spawnSync } = require('child_process');
 const { pool } = require('../services/wallet-service/src/db');
 
 const MIGRATIONS_DIR = path.resolve(__dirname, '../database/migrations');
+const INIT_DIR = path.resolve(__dirname, '../database/init');
+
+async function applySqlFiles(client, dir, files) {
+  for (const file of files) {
+    const existing = await client.query('SELECT 1 FROM schema_migrations WHERE filename = $1', [file]);
+    if (existing.rows.length > 0) {
+      console.log(`[SKIP] ${file}`);
+      continue;
+    }
+    const sql = fs.readFileSync(path.join(dir, file), 'utf8');
+    console.log(`[RUN] ${file}`);
+    await client.query(sql);
+    await client.query('INSERT INTO schema_migrations (filename) VALUES ($1)', [file]);
+  }
+}
 
 async function runMigrations() {
   const client = await pool.connect();
@@ -18,21 +33,20 @@ async function runMigrations() {
       )
     `);
 
+    const applied = await client.query('SELECT COUNT(*)::int AS count FROM schema_migrations');
+    const isFresh = applied.rows[0].count === 0;
+
+    if (isFresh && fs.existsSync(INIT_DIR)) {
+      const initFiles = fs.readdirSync(INIT_DIR)
+        .filter(f => f.endsWith('.sql'))
+        .sort();
+      await applySqlFiles(client, INIT_DIR, initFiles);
+    }
+
     const files = fs.readdirSync(MIGRATIONS_DIR)
       .filter(f => f.endsWith('.sql'))
       .sort();
-
-    for (const file of files) {
-      const existing = await client.query('SELECT 1 FROM schema_migrations WHERE filename = $1', [file]);
-      if (existing.rows.length > 0) {
-        console.log(`[SKIP] ${file}`);
-        continue;
-      }
-      const sql = fs.readFileSync(path.join(MIGRATIONS_DIR, file), 'utf8');
-      console.log(`[RUN] ${file}`);
-      await client.query(sql);
-      await client.query('INSERT INTO schema_migrations (filename) VALUES ($1)', [file]);
-    }
+    await applySqlFiles(client, MIGRATIONS_DIR, files);
 
     await client.query('COMMIT');
     console.log('Migrations complete');
@@ -46,7 +60,7 @@ async function runMigrations() {
 
 function runBackfill() {
   console.log('Running room snapshot backfill...');
-  const result = spawnSync('node', ['backfill-room-snapshots.js'], {
+  const result = spawnSync('node', ['backfill-room-snapshots.cjs'], {
     cwd: __dirname,
     stdio: 'inherit',
   });

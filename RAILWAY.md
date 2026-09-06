@@ -62,8 +62,8 @@ Add one service for each folder that contains `railway.json`. For each service, 
 After PostgreSQL is up and services are deployed, run migrations from `wallet-service`:
 
 ```bash
-railway run --service wallet-service -- node /app/scripts/migrate.js
-railway run --service wallet-service -- node /app/scripts/backfill-room-snapshots.js
+railway run --service wallet node scripts/migrate.cjs
+railway run --service wallet node scripts/backfill-room-snapshots.cjs
 ```
 
 Or from your local with `DATABASE_URL` set:
