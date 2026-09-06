@@ -1,0 +1,550 @@
+{
+  "generated_at": "2026-09-06T05:08:55.389Z",
+  "categories": [
+    {
+      "key": "app_control",
+      "owner": "platform",
+      "classification": "admin_runtime_config",
+      "applyMode": "immediate",
+      "fields": [
+        "maintenance_enabled",
+        "maintenance_message",
+        "maintenance_starts_at",
+        "maintenance_ends_at",
+        "min_supported_version",
+        "force_update_message",
+        "announcement",
+        "announcement_enabled",
+        "announcement_severity"
+      ]
+    },
+    {
+      "key": "room_defaults",
+      "owner": "game_operations",
+      "classification": "admin_runtime_config",
+      "applyMode": "new_room",
+      "fields": [
+        "small_blind",
+        "big_blind",
+        "ante",
+        "min_buy_in",
+        "max_buy_in",
+        "max_players",
+        "turn_time_sec",
+        "auto_start_at",
+        "auto_start_delay_sec",
+        "minimum_play_minutes",
+        "rake_percent",
+        "rake_cap"
+      ]
+    },
+    {
+      "key": "room_creation_limits",
+      "owner": "game_operations",
+      "classification": "admin_runtime_config",
+      "applyMode": "immediate",
+      "fields": [
+        "player_can_create",
+        "max_rooms_per_player",
+        "club_max_members",
+        "max_rooms_per_agent",
+        "max_rooms_per_club",
+        "allowed_modes",
+        "allowed_game_type_slugs",
+        "private_room_enabled",
+        "room_name_min_length",
+        "room_name_max_length",
+        "room_password_min_length",
+        "room_password_max_length",
+        "allowed_visibility",
+        "room_expiration_hours",
+        "min_ante",
+        "max_ante",
+        "min_small_blind",
+        "max_small_blind",
+        "min_players",
+        "max_players",
+        "min_turn_time_sec",
+        "max_turn_time_sec",
+        "min_auto_start_delay_sec",
+        "max_auto_start_delay_sec",
+        "min_minimum_play_minutes",
+        "max_minimum_play_minutes",
+        "min_buy_in_chips",
+        "max_buy_in_chips",
+        "min_rake_percent",
+        "max_rake_percent",
+        "max_rake_cap"
+      ]
+    },
+    {
+      "key": "game_runtime",
+      "owner": "game_operations",
+      "classification": "admin_runtime_config",
+      "applyMode": "immediate",
+      "fields": [
+        "auto_deal_delay_sec",
+        "result_display_sec",
+        "socket_reconnect_delay_sec",
+        "socket_reconnect_attempts",
+        "socket_reconnect_max_delay_sec",
+        "socket_reconnect_randomization",
+        "room_access_token_minutes",
+        "seat_reservation_ttl_sec",
+        "disconnect_grace_sec",
+        "idle_timeout_sec",
+        "tournament_minimum_play_minutes",
+        "practice_minimum_play_minutes",
+        "http_timeout_sec",
+        "health_check_timeout_sec",
+        "public_config_cache_ttl_sec",
+        "balance_poll_interval_sec",
+        "promotion_banner_interval_sec",
+        "admin_live_poll_interval_sec",
+        "showdown_ready_delay_sec"
+      ]
+    },
+    {
+      "key": "room_auto_cleanup",
+      "owner": "game_operations",
+      "classification": "admin_runtime_config",
+      "applyMode": "immediate",
+      "fields": [
+        "enabled",
+        "delete_empty_after_minutes",
+        "delete_all_player_rooms_after_hours",
+        "only_player_created",
+        "allow_close_occupied_expired",
+        "allow_close_playing",
+        "cleanup_worker_interval_sec",
+        "version"
+      ]
+    },
+    {
+      "key": "card_back_settings",
+      "owner": "platform",
+      "classification": "client_presentation_config",
+      "applyMode": "immediate",
+      "fields": [
+        "style"
+      ]
+    },
+    {
+      "key": "app_background",
+      "owner": "platform",
+      "classification": "client_presentation_config",
+      "applyMode": "immediate",
+      "fields": [
+        "background_url",
+        "overlay_opacity"
+      ]
+    },
+    {
+      "key": "rake_settings",
+      "owner": "economy",
+      "classification": "admin_runtime_config",
+      "applyMode": "next_hand",
+      "fields": [
+        "default_rake_percent",
+        "default_rake_cap"
+      ]
+    },
+    {
+      "key": "texas_holdem_policy",
+      "owner": "game_operations",
+      "classification": "admin_runtime_config",
+      "applyMode": "next_hand",
+      "fields": [
+        "time_bank_sec",
+        "allow_straddle",
+        "allow_rebuy",
+        "allow_run_twice",
+        "max_raises_per_round",
+        "no_flop_no_drop",
+        "minimum_rake_pot",
+        "auto_timeout_action",
+        "sit_out_timeout_sec",
+        "max_hands_per_room",
+        "max_room_duration_hours"
+      ]
+    },
+    {
+      "key": "chinese_poker_policy",
+      "owner": "game_operations",
+      "classification": "admin_runtime_config",
+      "applyMode": "next_hand",
+      "fields": [
+        "auto_arrange_on_timeout",
+        "force_foul_on_invalid",
+        "fantasyland_enabled",
+        "royalty_table_version",
+        "scoop_bonus_points",
+        "foul_penalty_points"
+      ]
+    },
+    {
+      "key": "tournament_policy",
+      "owner": "game_operations",
+      "classification": "admin_runtime_config",
+      "applyMode": "new_room",
+      "fields": [
+        "registration_window_minutes",
+        "late_registration_minutes",
+        "min_players_to_start",
+        "action_time_sec",
+        "time_bank_sec",
+        "break_interval_minutes",
+        "break_duration_minutes",
+        "rebuy_allowed",
+        "addon_allowed",
+        "rebuy_chip_amount",
+        "addon_chip_amount",
+        "cancellation_policy",
+        "default_small_blind",
+        "default_big_blind",
+        "default_players_per_table",
+        "default_format",
+        "default_tournament_type",
+        "default_game_slug",
+        "default_max_players",
+        "default_starting_chips",
+        "default_entry_fee",
+        "default_blind_level_minutes",
+        "default_blind_structure",
+        "default_payout_structure",
+        "auto_start_enabled",
+        "auto_start_interval_sec",
+        "table_balance_max_diff",
+        "disconnect_timeout_sec",
+        "prize_distribution_policy"
+      ]
+    },
+    {
+      "key": "practice_policy",
+      "owner": "game_operations",
+      "classification": "admin_runtime_config",
+      "applyMode": "immediate",
+      "fields": [
+        "enabled",
+        "bots_enabled",
+        "max_bots",
+        "bot_ready_poll_ms",
+        "bot_initial_wait_ms",
+        "bot_max_wait_ms",
+        "bot_action_min_ms",
+        "bot_action_jitter_ms",
+        "bot_pot_limit_big_blinds",
+        "bot_error_retry_ms",
+        "practice_chips",
+        "auto_start_delay_sec",
+        "default_game_type",
+        "texas_max_players",
+        "chinese_max_players",
+        "texas_turn_time_sec",
+        "chinese_turn_time_sec",
+        "chinese_small_blind",
+        "chinese_big_blind",
+        "chinese_min_buy_in",
+        "chinese_max_buy_in",
+        "strategy_profile",
+        "demo_table_ids",
+        "demo_table_bot_counts",
+        "demo_bot_profiles"
+      ]
+    },
+    {
+      "key": "coin_settings",
+      "owner": "economy",
+      "classification": "admin_runtime_config",
+      "applyMode": "immediate",
+      "fields": [
+        "coin_name",
+        "coin_symbol",
+        "deposit_rate",
+        "withdrawal_rate",
+        "min_deposit_thb",
+        "max_deposit_thb_per_day",
+        "min_withdrawal_coins",
+        "max_withdrawal_coins_per_day",
+        "max_balance"
+      ]
+    },
+    {
+      "key": "wallet_economy_policy",
+      "owner": "economy",
+      "classification": "admin_runtime_config",
+      "applyMode": "immediate",
+      "fields": [
+        "min_transfer_amount",
+        "max_transfer_amount",
+        "daily_transfer_limit",
+        "admin_adjustment_requires_reason",
+        "daily_bonus_enabled",
+        "agent_withdrawal_approval_threshold",
+        "daily_bonus_base",
+        "daily_bonus_reward_schedule",
+        "daily_bonus_streak_step",
+        "daily_bonus_max_streak_days",
+        "max_shop_item_price",
+        "max_shop_items_per_day",
+        "shop_default_quantity",
+        "initial_wallet_balance",
+        "house_account_user_id",
+        "agent_default_commission_percent",
+        "agent_default_channel_name",
+        "agent_commission_max_percent"
+      ]
+    },
+    {
+      "key": "security_policy",
+      "owner": "security",
+      "classification": "admin_runtime_config",
+      "applyMode": "immediate",
+      "fields": [
+        "access_token_minutes",
+        "session_days",
+        "login_max_attempts",
+        "login_lockout_minutes",
+        "password_min_length",
+        "password_policy_version",
+        "password_hash_rounds",
+        "default_user_role",
+        "max_sessions_per_user",
+        "admin_reauth_minutes",
+        "admin_config_write_window_sec",
+        "admin_config_write_max_requests",
+        "audit_retention_days"
+      ]
+    },
+    {
+      "key": "notification_policy",
+      "owner": "platform",
+      "classification": "admin_runtime_config",
+      "applyMode": "immediate",
+      "fields": [
+        "push_enabled",
+        "in_app_enabled",
+        "notification_poll_interval_sec",
+        "lobby_poll_interval_sec",
+        "api_retry_attempts"
+      ]
+    }
+  ],
+  "non_admin_config": {
+    "environment_config": [
+      {
+        "key": "server_host",
+        "owner": "platform",
+        "unit": "url_or_host",
+        "consumers": [
+          "mobile"
+        ],
+        "apply_mode": "build_time",
+        "sensitive": false,
+        "description": "Flutter SERVER_HOST dart-define or deployment host"
+      },
+      {
+        "key": "database_connection",
+        "owner": "platform",
+        "unit": "connection_settings",
+        "consumers": [
+          "auth-service",
+          "wallet-service",
+          "game-engine"
+        ],
+        "apply_mode": "restart",
+        "sensitive": true,
+        "description": "DB_HOST, DB_PORT, DB_NAME, DB_USER and DB_PASSWORD stay in environment or secret manager"
+      },
+      {
+        "key": "jwt_secret",
+        "owner": "security",
+        "unit": "secret",
+        "consumers": [
+          "auth-service",
+          "wallet-service",
+          "game-engine"
+        ],
+        "apply_mode": "restart",
+        "sensitive": true,
+        "description": "JWT signing secret stays in environment or secret manager"
+      },
+      {
+        "key": "cors_origins",
+        "owner": "platform",
+        "unit": "origin_list",
+        "consumers": [
+          "auth-service",
+          "wallet-service",
+          "game-engine"
+        ],
+        "apply_mode": "restart",
+        "sensitive": false,
+        "description": "Allowed CORS origins are deployment configuration, not admin free-text"
+      },
+      {
+        "key": "service_ports",
+        "owner": "platform",
+        "unit": "ports",
+        "consumers": [
+          "auth-service",
+          "wallet-service",
+          "game-engine"
+        ],
+        "apply_mode": "restart",
+        "sensitive": false,
+        "description": "PORT for each service"
+      },
+      {
+        "key": "public_app_url",
+        "owner": "platform",
+        "unit": "url",
+        "consumers": [
+          "wallet-service",
+          "agent-portal"
+        ],
+        "apply_mode": "restart",
+        "sensitive": false,
+        "description": "PUBLIC_APP_URL used for public referral links"
+      },
+      {
+        "key": "config_listen_retry_ms",
+        "owner": "platform",
+        "unit": "milliseconds",
+        "consumers": [
+          "auth-service",
+          "wallet-service",
+          "game-engine"
+        ],
+        "apply_mode": "restart",
+        "sensitive": false,
+        "description": "PostgreSQL LISTEN reconnect retry delay"
+      },
+      {
+        "key": "app_version",
+        "owner": "mobile",
+        "unit": "semver",
+        "consumers": [
+          "mobile"
+        ],
+        "apply_mode": "build_time",
+        "sensitive": false,
+        "description": "Flutter application build version used for minimum-version checks"
+      },
+      {
+        "key": "use_production",
+        "owner": "mobile",
+        "unit": "flag",
+        "consumers": [
+          "mobile"
+        ],
+        "apply_mode": "build_time",
+        "sensitive": false,
+        "description": "Flutter production/local endpoint selector"
+      },
+      {
+        "key": "enable_logging",
+        "owner": "mobile",
+        "unit": "flag",
+        "consumers": [
+          "mobile"
+        ],
+        "apply_mode": "build_time",
+        "sensitive": false,
+        "description": "Flutter debug logging selector"
+      },
+      {
+        "key": "app_timeout_environment_defaults",
+        "owner": "platform",
+        "unit": "seconds",
+        "consumers": [
+          "mobile"
+        ],
+        "apply_mode": "build_time",
+        "sensitive": false,
+        "description": "APP_HTTP_TIMEOUT_SECONDS and APP_HEALTH_CHECK_TIMEOUT_SECONDS are temporary environment defaults until server runtime config is loaded"
+      }
+    ],
+    "protocol_invariant": [
+      {
+        "key": "standard_deck",
+        "owner": "game_engine",
+        "unit": "cards",
+        "consumers": [
+          "game-engine"
+        ],
+        "apply_mode": "deployment",
+        "description": "Standard 52-card deck and card ranks/suits"
+      },
+      {
+        "key": "chinese_poker_hand_size",
+        "owner": "game_engine",
+        "unit": "cards",
+        "consumers": [
+          "game-engine",
+          "mobile"
+        ],
+        "apply_mode": "deployment",
+        "description": "Chinese Poker 13-card protocol and row sizes"
+      }
+    ],
+    "security_invariant": [
+      {
+        "key": "authenticated_session_record",
+        "owner": "security",
+        "unit": "control",
+        "consumers": [
+          "auth-service",
+          "wallet-service",
+          "game-engine"
+        ],
+        "apply_mode": "deployment",
+        "description": "JWT must be bound to a non-revoked persisted session; this is not an Admin-editable policy"
+      },
+      {
+        "key": "admin_privilege_boundaries",
+        "owner": "security",
+        "unit": "control",
+        "consumers": [
+          "wallet-service",
+          "admin-web"
+        ],
+        "apply_mode": "deployment",
+        "description": "Only authorized administrator roles can mutate privileged resources; not configurable through runtime policy"
+      },
+      {
+        "key": "password_hashing_required",
+        "owner": "security",
+        "unit": "control",
+        "consumers": [
+          "auth-service",
+          "wallet-service"
+        ],
+        "apply_mode": "deployment",
+        "description": "Passwords must be stored only as bcrypt hashes; the hash algorithm is a security invariant while rounds are configured"
+      }
+    ],
+    "client_presentation_config": [
+      {
+        "key": "ui_animation_durations",
+        "owner": "frontend",
+        "unit": "milliseconds",
+        "consumers": [
+          "mobile"
+        ],
+        "apply_mode": "app_release",
+        "description": "Pure visual animation timing that does not control server authority"
+      },
+      {
+        "key": "room_city_flag_map",
+        "owner": "frontend",
+        "unit": "lookup_table",
+        "consumers": [
+          "mobile"
+        ],
+        "apply_mode": "app_release",
+        "description": "Presentation-only room-name to flag lookup; does not affect game or business policy"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "allow": [
+    { "path": "apps/mobile/lib/widgets/", "reason": "presentation animation timings; migrate under client_presentation_config in P2" },
+    { "path": "apps/mobile/lib/config.dart", "reason": "deployment/environment bootstrap; not admin-editable" },
+    { "path": "apps/mobile/lib/services/api_service.dart", "reason": "network bootstrap timeout; migrate to client runtime endpoint in P2" },
+    { "path": "apps/mobile/lib/screens/club_screen.dart", "reason": "client polling timeout; tracked under CFG-P1-108" },
+    { "path": "services/game-engine/src/index.js", "pattern": "setTimeout\\(checkHumanReady, (1000|5000)\\)", "reason": "practice bot timing; tracked under CFG-P1-105" },
+    { "path": "services/game-engine/src/index.js", "pattern": "let delay = 3000|delay \\+= 2000", "reason": "practice bot timing; tracked under CFG-P1-105" },
+    { "path": "apps/admin-web/app/(admin)/games/live/page.tsx", "reason": "admin polling interval; tracked under CFG-P1-108" }
+  ],
+  "banned_patterns": [
+    "TURN_TIME_SEC",
+    "players\\.size\\s*>=\\s*2",
+    "turn_time_sec[^\\n]*\\|\\|[^\\n]*\\d+",
+    "turn_time_sec[^\\n]*:\\s*(10|30|60)",
+    "Duration\\(minutes:\\s*(15|30)\\)",
+    "Duration\\(seconds:\\s*(5|12|30)\\)",
+    "socketReconnectDelay\\s*=\\s*\\d+",
+    "_maxReconnectAttempts\\s*=\\s*\\d+",
+    "ROOM_ACCESS_TOKEN_EXPIRES_IN",
+    "setInterval\\([^,]+,\\s*\\d{3,}\\)",
+    "setTimeout\\([^,]+,\\s*\\d{3,}\\)"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "sunpoker-apk-server",
+  "version": "1.0.0",
+  "description": "The Sun Poker APK Download Server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop sunpoker-apk",
+    "pm2:restart": "pm2 restart sunpoker-apk",
+    "pm2:logs": "pm2 logs sunpoker-apk"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

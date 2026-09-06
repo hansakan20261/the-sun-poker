@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Sun Poker - Download</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 24px;
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .logo {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #f7c948, #ff8c00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: rgba(255,255,255,0.6);
+      font-size: 14px;
+      margin-bottom: 36px;
+    }
+
+    .version-badge {
+      display: inline-block;
+      background: rgba(247,201,72,0.15);
+      border: 1px solid rgba(247,201,72,0.4);
+      color: #f7c948;
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 32px;
+    }
+
+    .download-section h2 {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(135deg, #f7c948, #ff8c00);
+      color: #1a1a2e;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 16px 24px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(247,201,72,0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(247,201,72,0.5);
+    }
+
+    .btn .btn-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn .icon { font-size: 20px; }
+
+    .btn .size {
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.7;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      box-shadow: none;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.14);
+      box-shadow: none;
+    }
+
+    .recommended {
+      position: relative;
+    }
+
+    .recommended::before {
+      content: '⭐ แนะนำ';
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      background: #f7c948;
+      color: #1a1a2e;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 10px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin: 28px 0;
+    }
+
+    .info {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.8;
+    }
+
+    .info strong { color: rgba(255,255,255,0.7); }
+
+    .steps {
+      text-align: left;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 20px;
+    }
+
+    .steps h3 {
+      font-size: 13px;
+      color: #f7c948;
+      margin-bottom: 10px;
+    }
+
+    .steps ol {
+      padding-left: 18px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      line-height: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">🃏</div>
+    <h1>The Sun Poker</h1>
+    <p class="subtitle">เกมโป๊กเกอร์ออนไลน์</p>
+    <span class="version-badge">Version 1.0.0</span>
+
+    <div class="download-section">
+      <h2>ดาวน์โหลด APK</h2>
+
+      <a href="/apk/the-sun-poker-arm64.apk" class="btn recommended">
+        <div class="btn-left">
+          <span class="icon">📱</span>
+          <div>
+            <div>Android (ARM64)</div>
+            <div class="size">สำหรับมือถือรุ่นใหม่ (2018+)</div>
+          </div>
+        </div>
+        <span>⬇</span>
+      </a>
+
+      <a href="/apk/the-sun-poker-armv7.apk" class="btn btn-secondary">
+        <div class="btn-left">
+          <span class="icon">📱</span>
+          <div>
+            <div>Android (ARMv7)</div>
+            <div class="size">สำหรับมือถือรุ่นเก่า</div>
+          </div>
+        </div>
+        <span>⬇</span>
+      </a>
+
+      <a href="/apk/the-sun-poker-x86_64.apk" class="btn btn-secondary">
+        <div class="btn-left">
+          <span class="icon">💻</span>
+          <div>
+            <div>Android (x86_64)</div>
+            <div class="size">สำหรับ Emulator / PC</div>
+          </div>
+        </div>
+        <span>⬇</span>
+      </a>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="steps">
+      <h3>📋 วิธีติดตั้ง</h3>
+      <ol>
+        <li>ดาวน์โหลด APK (เลือก ARM64 สำหรับมือถือทั่วไป)</li>
+        <li>เปิด <strong>การตั้งค่า → ความปลอดภัย</strong></li>
+        <li>เปิดใช้ <strong>"ติดตั้งแอปจากแหล่งที่ไม่รู้จัก"</strong></li>
+        <li>เปิดไฟล์ APK แล้วกด <strong>ติดตั้ง</strong></li>
+      </ol>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="info">
+      <strong>ระบบที่รองรับ:</strong> Android 5.0 ขึ้นไป<br />
+      <strong>ขนาดไฟล์:</strong> ~83 MB<br />
+      <strong>อัปเดตล่าสุด:</strong> เมษายน 2569
+    </div>
+  </div>
+</body>
+</html>

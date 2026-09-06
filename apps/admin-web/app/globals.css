@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #5C0000;
+  color: #DAA520;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-sun-red-dark hover:bg-sun-red text-sun-gold-light font-bold py-2 px-4 md:py-3 md:px-6 rounded-lg transition-all text-sm md:text-base;
+  }
+  .btn-black {
+    @apply bg-sun-black hover:bg-gray-800 text-white font-bold py-2 px-4 md:py-3 md:px-6 rounded-lg transition-all text-sm md:text-base;
+  }
+  .btn-green {
+    @apply bg-sun-green hover:bg-green-700 text-white font-bold py-2 px-4 md:py-3 md:px-6 rounded-lg transition-all text-sm md:text-base;
+  }
+  .btn-danger {
+    @apply bg-red-700 hover:bg-red-800 text-white font-bold py-2 px-4 md:py-3 md:px-6 rounded-lg transition-all text-sm md:text-base;
+  }
+  .input-field {
+    @apply w-full bg-white/10 border border-sun-gold/30 text-white placeholder-white/50 rounded-lg px-3 py-2 md:px-4 md:py-3 text-sm md:text-base focus:outline-none focus:border-sun-gold-light focus:ring-1 focus:ring-sun-gold-light;
+  }
+  .card {
+    @apply bg-sun-red-dark/80 border border-sun-gold/20 rounded-xl p-4 md:p-6;
+  }
+  .stat-card {
+    @apply card text-center;
+  }
+  .table-row {
+    @apply border-b border-sun-gold/10 hover:bg-sun-red/30 transition-colors;
+  }
+}
+
+/* Responsive table wrapper */
+@layer utilities {
+  .table-responsive {
+    @apply overflow-x-auto -mx-3 md:mx-0;
+  }
+  .table-responsive table {
+    @apply min-w-[600px] md:min-w-0 w-full;
+  }
+}

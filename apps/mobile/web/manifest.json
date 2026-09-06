@@ -1,0 +1,36 @@
+{
+    "name": "The Sun Poker",
+    "short_name": "Sun Poker",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0E0303",
+    "theme_color": "#8B0000",
+    "description": "เกมโป๊กเกอร์ออนไลน์ - Texas Hold'em & ไพ่สามกอง",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "categories": ["games", "entertainment"],
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}

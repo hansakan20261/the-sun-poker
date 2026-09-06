@@ -1,0 +1,9 @@
+{
+  "build": {
+    "builder": "DOCKERFILE",
+    "dockerfilePath": "database/Dockerfile"
+  },
+  "deploy": {
+    "restartPolicyType": "NEVER"
+  }
+}
